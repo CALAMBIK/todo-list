@@ -1,0 +1,10 @@
+<mat-dialog-content>
+  <p>Would you like to update the task??</p>
+  <mat-form-field>
+    <input matInput [formControl]="text" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="taskData" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

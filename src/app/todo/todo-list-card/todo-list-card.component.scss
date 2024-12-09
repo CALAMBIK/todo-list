@@ -1,0 +1,44 @@
+.card {
+  display: flex;
+  padding: 10px;
+  gap: 10px; /* Расстояние между колонками */
+  max-width: 800px; /* Ограничиваем максимальную ширину */
+  margin: 0 auto; /* Центрируем сам контейнер по горизонтали */
+
+  * {
+    flex: 1 1 25%; /* Равное распределение ширины на 4 колонки */
+    max-width: 25%; /* Гарантируем, что каждая колонка занимает не более 25% ширины */
+    box-sizing: border-box; /* Учитываем padding и border в ширину */
+    overflow-wrap: break-word; /* Перенос слов внутри колонки */
+    text-align: center; /* Выравнивание текста по центру */
+    margin-bottom: 20px;
+  }
+
+  .complete {
+    color: aliceblue;
+    background-color: rgb(105, 233, 98);
+  }
+  .cancel {
+    color: aliceblue;
+    background-color: rgb(233, 229, 98);
+  }
+  .update {
+    color: aliceblue;
+    background-color: rgb(98, 98, 233);
+  }
+  .update-disabled {
+    color: aliceblue;
+    background-color: rgb(98, 98, 233);
+    opacity: 0.5;
+  }
+  .delete {
+    color: aliceblue;
+    background-color: rgb(229, 81, 81);
+  }
+
+  span {
+    padding: 10px;
+    background-color: rgb(235, 242, 251);
+    border-radius: 7px;
+  }
+}

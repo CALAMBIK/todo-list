@@ -1,0 +1,21 @@
+<div class="todo">
+  <h1>Todos App</h1>
+  <app-todo-add (addTask)="addTask($event)"></app-todo-add>
+  @if(countTodosLeft$ | async){
+  <div>{{ countTodosLeft$ | async }} todo(s) left</div>
+  }
+  <app-todo-filter
+    (filterAll)="filterAll()"
+    (filterActive)="filterActive()"
+    (filterComplited)="filterComplited()"
+  ></app-todo-filter>
+
+  <div *ngFor="let task of filteredTasks$ | async">
+    <app-todo-list-card
+      [task]="task"
+      (deleteTask)="deleteTask($event)"
+      (editTask)="editTask($event)"
+      (changeTaskStatus)="changeTaskStatus($event)"
+    ></app-todo-list-card>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="card">
+  <button
+    [ngClass]="!task?.status ? 'complete' : 'cancel'"
+    mat-raised-button
+    (click)="onChangeTaskStatus()"
+  >
+    {{ task?.status === false ? "Complite" : "Cancel" }}
+  </button>
+  <span>{{ task?.text }}</span>
+  <button
+    [disabled]="task?.status"
+    [ngClass]="!task?.status ? 'update' : 'update-disabled'"
+    mat-raised-button
+    (click)="openDialog()"
+  >
+    Update
+  </button>
+  <button class="delete" mat-raised-button (click)="onDeleteTask()">
+    Delete
+  </button>
+</div>
